@@ -29,7 +29,6 @@ userSchema.plugin(paginate);
 
 userSchema.methods.isPasswordMatch = async function (password) {
   const user = this;
-  console.log(user.password);
   return bcrypt.compare(password, user.password);
 };
 userSchema.statics.isEmailTaken = async function (email, excludeUserId) {

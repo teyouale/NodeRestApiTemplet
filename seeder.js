@@ -1,5 +1,6 @@
 import { User } from "./models/index.js";
 import { MockUser } from "./data/user.js";
+
 const importData = async () => {
   try {
     await User.deleteMany();
