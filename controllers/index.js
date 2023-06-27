@@ -1,3 +1,3 @@
 import authController from "./auth.controller.js";
-
-export { authController };
+import todoContoller from "./todo.controller.js";
+export { authController, todoContoller };

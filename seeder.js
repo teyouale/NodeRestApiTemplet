@@ -4,8 +4,8 @@ import { MockTodos } from "./data/todo.js";
 
 const importData = async () => {
   try {
-    await User.deleteMany();
-    await Todo.deleteMany();
+    // await User.deleteMany();
+    // await Todo.deleteMany();
 
     const createdUserUsers = await User.insertMany(MockUser);
     const createdTodos = await Todo.insertMany(MockTodos);

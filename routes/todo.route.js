@@ -1,24 +1,16 @@
 import express from "express";
+import { todoContoller } from "../controllers/index.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  return res.status(404).json("View all Todos");
-});
-router.post("/", (req, res) => {
-  return res.status(200).json("Create Todos");
-});
-router.get("/:todo_id", (req, res) => {
-  return res.status(200).json(`View ${req.params.todo_id} Todos`);
-});
-router.put("/:todo_id", (req, res) => {
-  return res.status(200).json(`Update ${req.params.todo_id} Todos`);
-});
+router.get("/", todoContoller.AllTodos);
+router.get("/:todo_id", todoContoller.SingleTodos);
+router.post("/", todoContoller.CreateTodo);
+router.put("/:todo_id", todoContoller.UpdateTodo);
+router.delete("/", todoContoller.DeleteTodos);
+
 router.delete("/:todo_id", (req, res) => {
   return res.status(200).json(`Delete ${req.params.todo_id} Todos`);
-});
-router.delete("/", (req, res) => {
-  return res.status(200).json(`Delete all Todos`);
 });
 
 export default router;
