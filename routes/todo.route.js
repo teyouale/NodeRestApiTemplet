@@ -3,7 +3,7 @@ import express from "express";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  return res.status(200).json("View all Todos");
+  return res.status(404).json("View all Todos");
 });
 router.post("/", (req, res) => {
   return res.status(200).json("Create Todos");
