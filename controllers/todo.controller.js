@@ -2,7 +2,7 @@ import { todoService } from "../services/index.js";
 
 const AllTodos = async (req, res) => {
   const todos = await todoService.GetAllTodos();
-  console.log(todos);
+  // console.log(todos);
   return res.status(200).json({ todos });
 };
 
